@@ -27,7 +27,7 @@ function TaskList() {
                     <div className='flex flex-col gap-4'>
                         {taskData && taskData.length ? taskData.map((task, i) => (
                             <TaskCard key={i} task={task} deleteTask={deleteTask} editTask={editTask} />
-                        )) : <p>No tasks found</p>}
+                        )) : <div className=' bg-white p-4 rounded-md shadow-md text-center xl font-semibold text-gray-700/80'>No tasks found</div>}
 
                     </div>
 
