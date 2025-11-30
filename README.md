@@ -1,16 +1,58 @@
-# React + Vite
+# Curso Básico React + Tailwind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto de práctica para aprender conceptos básicos de React con Tailwind CSS usando Vite.
 
-Currently, two official plugins are available:
+## 📚 ¿Qué aprenderás?
+- Nociones básicas de React: componentes funcionales, JSX.
+- Creación de componentes reutilizables (Button, TaskCard, TaskForm).
+- Uso de estado local con `useState` y efectos con `useEffect`.
+- Manejo de contexto global con `Context API` y hooks personalizados (`useTaskContext`).
+- Maquetación y estilos con Tailwind CSS (clases utilitarias, safelist para clases dinámicas).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧰 Tecnologías
+- React 19
+- Vite (Dev server)
+- Tailwind CSS
+- ESLint (análisis estático)
 
-## React Compiler
+## 🗂 Estructura principal
+- `src/` - Código fuente
+- `src/compontents/` - Componentes del proyecto
+- `src/context/TaskContext.jsx` - Contexto para tareas (Provider y hook)
+- `src/pages/TaskList.jsx` - Página principal con listado y formulario
+- `src/tasks.js` - Datos de ejemplo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Ejecutar el proyecto
+1. Instalar dependencias:
+```bash
+npm install
+```
+2. Levantar servidor de desarrollo:
+```bash
+npm run dev
+```
+3. Construir para producción:
+```bash
+npm run build
+```
+4. Previsualizar producción:
+```bash
+npm run preview
+```
 
-## Expanding the ESLint configuration
+## ⛑️ Notas y buenas prácticas
+- Usa clases estáticas para Tailwind cuando necesites colores dinámicos (mapear colores a clases predefinidas) para evitar purgado en producción.
+- Usa el hook `useTaskContext()` para consumir el contexto; aportará mensajes de error claros si se usa fuera del Provider.
+- Mantén una única fuente de verdad para `tasks` dentro del Provider (no dupliques estados localmente en componentes que consumen el contexto).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔍 Glosario
+- **Context API**: API de React para compartir datos entre componentes sin pasar props manualmente.
+- **useState/useEffect**: Hooks de React para estado y efectos secundarios.
+- **Tailwind CSS**: Framework de utilidades CSS para diseño rápido.
+
+---
+Si quieres, puedo:
+- Añadir PropTypes o migrar a TypeScript.
+- Añadir tests básicos para `TaskForm` y `TaskList`.
+- Estandarizar la API del `TaskContext` (por ejemplo, usar solo `tasks` y funciones CRUD desde el Provider).
+
